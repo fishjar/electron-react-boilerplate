@@ -41,5 +41,7 @@ yarn
 # 开发启动
 yarn dev
 
-# 打包（待研究）
+# 打包
+# https://www.electron.build/
+yarn dist
 ```

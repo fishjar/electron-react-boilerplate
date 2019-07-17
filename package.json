@@ -1,10 +1,11 @@
 {
   "name": "electron-react-boilerplate",
   "version": "0.1.0",
-  "author": "gabe",
+  "author": "Gabe Yuan <yugang2002@gmail.com>",
   "license": "MIT",
   "private": true,
-  "main": "public/main.js",
+  "main": "public/electron.js",
+  "homepage": "./",
   "dependencies": {
     "electron-is-dev": "^1.1.0",
     "react": "^16.8.6",
@@ -16,7 +17,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\""
+    "dev": "cross-env concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist-mwl": "electron-builder -mwl",
+    "dist-windows": "electron-builder --windows nsis:ia32",
+    "dist-linux": "electron-builder --linux deb tar.xz"
+  },
+  "build": {
+    "appId": "your.id",
+    "mac": {
+      "category": "your.app.category.type"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,6 +47,7 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.1",
+    "cross-env": "^5.2.0",
     "devtron": "^1.4.0",
     "electron": "^5.0.7",
     "electron-builder": "^21.0.15",
