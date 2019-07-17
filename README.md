@@ -16,7 +16,7 @@
 ├── public
 │   ├── favicon.ico
 │   ├── index.html
-│   ├── electron.js           # electron 入口文件
+│   ├── electron.js       # electron 入口文件
 │   ├── manifest.json
 │   └── preload.js
 ├── README.md
